@@ -16,10 +16,9 @@ import java.util.List;
 @AllArgsConstructor
 public class CarGraphQLController {
     private CarService carService;
-
+    private CarMapper carMapper;
     @MutationMapping
     public CarDTO saveCar(@Argument Car car) {
-        CarMapper carMapper = new CarMapper();
         return carService.save(carMapper.CarToCarDTO(car));
     }
 
