@@ -12,8 +12,9 @@ import java.util.List;
 @Service
 @AllArgsConstructor
 public class CarManager implements CarService {
+    @Autowired
     CarRepository carRepository;
-    CarMapper carMapper;
+    CarMapper carMapper = new CarMapper();
     @Override
     public List<CarDTO> saveAll(List<CarDTO> carDTOList) {
         List<CarDTO> carDTOList1 = new ArrayList<>();
